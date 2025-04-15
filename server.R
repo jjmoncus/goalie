@@ -42,10 +42,9 @@ function(input, output, session) {
       str_subset("_[[:digit:]]+$") %>%
       str_replace("_[[:digit:]]+$", "") %>%
       unique() %>%
-      # remove the "_other" AI batteries, it's too small
-      str_subset("_other", negate = TRUE) %>%
       # remove paradata we add ourselves
-      str_subset("Flag", negate = TRUE)
+      str_subset("(Flag)|(FLAG)", negate = TRUE) %>%
+      str_subset("(Hid)|(hid)|(HID)", negate = TRUE)
   })
 
   all_straightlines <- reactive({

@@ -8,6 +8,13 @@
 #
 
 library(shiny)
+library(bslib)
+library(tidyverse)
+library(haven)
+library(straightliner)
+library(openxlsx)
+library(noodles)
+library(DT)
 
 # Define UI for application that draws a histogram
 ui <- page_sidebar(
@@ -53,3 +60,19 @@ ui <- page_sidebar(
     verbatimTextOutput("sl_glimpse")
   )
 )
+
+# folder <- here("Tech Bullseye", "2024", "data", "prep", "raw_files")
+# file <- list.files(folder) %>% str_subset("Merged")
+# out <- haven::read_sav(glue("{folder}/{file}")) %>% haven::as_factor()
+#
+# batts <- out %>%
+#     names() %>%
+#     # anything ending in a number is likely a battery item, take their prefixes
+#     str_subset("_[[:digit:]]+$") %>%
+#     str_replace("_[[:digit:]]+$", "") %>%
+#     unique() %>%
+#     # remove the "_other" AI batteries, it's too small
+#     str_subset("_other", negate = TRUE) %>%
+#     # remove paradata we add ourselves
+#     str_subset("Flag", negate = TRUE)
+# })
