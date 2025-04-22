@@ -32,18 +32,16 @@ ui <- page_sidebar(
     card(
       card_header("Information"),
 
-      card(
-        card_header("Number of Respondents"),
+      value_box(
+        "Number of Respondents",
         textOutput("num_respondents")
       ),
-      card(
-        card_header("Number of Survey Batteries Tested"),
+      value_box(
+        "Number of Survey Batteries Tested",
         textOutput("num_batts")
       ),
-      card(
-        card_header(
-          "Number of Respondents with Potential Straightlining Problems"
-        ),
+      value_box(
+        "Number of Respondents with Potential Straightlining Problems",
         textOutput("num_straightliners")
       )
     ),
